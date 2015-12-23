@@ -1,0 +1,158 @@
+$color-accent: #AA3939;
+$color-accent-lightest: #FFAAAA;
+$color-accent-light: #D46A6A;
+$color-accent-dark: #801515;
+$color-accent-darkest: #550000;
+$transparent-overlay-light: rgba(0, 0, 0, 0.1);
+
+.theme {
+  .main-header {
+    .navbar {
+      background-color: $color-accent;
+      .nav {
+        > li > a {
+          color: #ffffff;
+          &:hover, &:active, &:focus {
+            background: $transparent-overlay-light;
+            color: #f6f6f6;
+          }
+        }
+        .open > a {
+          background: $transparent-overlay-light;
+          color: #f6f6f6;
+          &:hover, &:focus {
+            background: $transparent-overlay-light;
+            color: #f6f6f6;
+          }
+        }
+        > .active > a {
+          background: $transparent-overlay-light;
+          color: #f6f6f6;
+        }
+      }
+      .sidebar-toggle {
+        color: #ffffff;
+        &:hover {
+          color: #f6f6f6;
+          background: $transparent-overlay-light;
+          background-color: $color-accent-darkest;
+        }
+        color: #fff;
+      }
+    }
+    .logo {
+      background-color: $color-accent-dark;
+      color: #ffffff;
+      border-bottom: 0 solid transparent;
+      &:hover {
+        background-color: $color-accent-darkest;
+      }
+    }
+    li.user-header {
+      background-color: $color-accent;
+    }
+  }
+  .content-header {
+    background: transparent;
+  }
+  .wrapper, .main-sidebar, .left-side {
+    background-color: #222d32;
+  }
+  .user-panel > .info {
+    color: #fff;
+    > a {
+      color: #fff;
+    }
+  }
+  .sidebar-menu > li {
+    &.header {
+      color: #4b646f;
+      background: #1a2226;
+    }
+    > a {
+      border-left: 3px solid transparent;
+    }
+    &:hover > a, &.active > a {
+      color: #ffffff;
+      background: #1e282c;
+      border-left-color: $color-accent;
+    }
+    > .treeview-menu {
+      margin: 0 1px;
+      background: #2c3b41;
+    }
+  }
+  .sidebar a {
+    color: #b8c7ce;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .treeview-menu > li {
+    > a {
+      color: #8aa4af;
+    }
+    &.active > a, > a:hover {
+      color: #ffffff;
+    }
+  }
+  .sidebar-form {
+    border-radius: 3px;
+    border: 1px solid #374850;
+    margin: 10px 10px;
+    input[type="text"], .btn {
+      box-shadow: none;
+      background-color: #374850;
+      border: 1px solid transparent;
+      height: 35px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    input[type="text"] {
+      color: #666;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 2px;
+      &:focus {
+        background-color: #fff;
+        color: #666;
+        + .input-group-btn .btn {
+          background-color: #fff;
+          color: #666;
+          border-left-color: #fff;
+        }
+      }
+    }
+    .btn {
+      color: #999;
+      border-top-left-radius: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &.layout-top-nav .main-header > .logo {
+    background-color: $color-accent;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+    &:hover {
+      background-color: $color-accent-darkest;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .theme .main-header .navbar .dropdown-menu li {
+    &.divider {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    a {
+      color: #fff;
+      &:hover {
+        background: $color-accent-darkest;
+      }
+    }
+  }
+}
