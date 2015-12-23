@@ -1,0 +1,9 @@
+{{! C application-ui }}
+{{application-header toggleAside=(action 'toggleAside')}}
+{{application-sidebar links=sidebarData}}
+<div class="content-wrapper">
+  <section class="content">
+    {{liquid-outlet}}
+  </section>
+</div>
+{{application-footer}}

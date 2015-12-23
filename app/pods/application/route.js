@@ -3,6 +3,6 @@ const { $, Route } = Ember;
 export default Route.extend({
   jqSetup: function() {
     // adds theme skins to page
-    $('body').addClass('theme sidebar-mini sidebar-collapse');
+    $('body').addClass('theme sidebar-mini');
   }.on('activate')
 });

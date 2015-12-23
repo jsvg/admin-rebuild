@@ -15,13 +15,13 @@
       {{#if link.isTree}}
         <li class="treeview">
           <a href="#">
-            <i class="{{link.icon}}"></i>
+            {{fa-icon link.icon}}
             <span>{{link.text}}</span>
-            <i class="fa fa-angle-left pull-right"></i>
+            {{fa-icon 'angle-left' class='pull-right'}}
           </a>
           <ul class="treeview-menu">
             {{#each link.children as |child|}}
-              <li>{{#link-to child.linkTo}}<i class="{{child.icon}}"></i> {{child.text}}{{/link-to}}</li>
+              <li>{{#link-to child.linkTo}}{{fa-icon child.icon}} {{child.text}}{{/link-to}}</li>
             {{/each}}
           </ul>
         </li>        
@@ -31,7 +31,7 @@
       {{#if link.isMenu}}
         <li>
           {{#link-to link.linkTo}}
-            <i class="{{link.icon}}"></i> <span>{{link.text}}</span>
+            {{fa-icon link.icon}} <span>{{link.text}}</span>
           {{/link-to}}
         </li>
       {{/if}}

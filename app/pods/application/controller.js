@@ -56,12 +56,12 @@ export default Ember.Controller.extend({
         },
         {
           text: 'Modals',
-          linkTo: 'styles.ui.buttons',
+          linkTo: 'styles.ui.modals',
           icon: 'fa fa-circle-o'
         },
         {
           text: 'Stat Boxes',
-          linkTo: 'styles.ui.buttons',
+          linkTo: 'styles.ui.stats',
           icon: 'fa fa-circle-o'
         }
       ]
