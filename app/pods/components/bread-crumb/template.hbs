@@ -1,0 +1,16 @@
+{{! C bread-crumb }}
+{{#if route.linkable}}
+  {{#link-to route.path class=linkClass}}
+    {{#if hasBlock}}
+      {{yield this route}}
+    {{else}}
+      {{route.title}}
+    {{/if}}
+  {{/link-to}}
+{{else}}
+  {{#if hasBlock}}
+    {{yield this route}}
+  {{else}}
+    <a>{{route.title}} <span class="sr-only">(current)</span></a>
+  {{/if}}
+{{/if}}
