@@ -3,70 +3,39 @@
 {{! HOWTO: show a number badge <small class="label pull-right bg-red">3</small> }}
 
 <section class="sidebar">
-  <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu">
-    {{! MAIN NAV HEADER }}
-    <li class="header">MAIN NAVIGATION</li>
-    <li>
-      {{#link-to 'index'}}
-        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-      {{/link-to}}
-    </li>
-    
-    <li class="treeview">
-      <a href="#">
-        <i class="fa fa-pie-chart"></i>
-        <span>Visualizations</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="treeview-menu">
-        <li><a href="#"><i class="fa fa-circle-o"></i> C3.js Basic</a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i> D3.js Complex</a></li>
-      </ul>
-    </li>
-    <li class="header">UI ELEMENTS</li>
-    <li class="treeview">
-      <a href="#">
-        <i class="fa fa-laptop"></i>
-        <span>UI Elements</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="treeview-menu">
-        <li>{{#link-to 'ui.general'}}<i class="fa fa-circle-o"></i> General{{/link-to}}</li>
-        <li>{{#link-to 'ui.icons'}}<i class="fa fa-circle-o"></i> Icons{{/link-to}}</li>
-        <li>{{#link-to 'ui.buttons'}}<i class="fa fa-circle-o"></i> Buttons{{/link-to}}</li>
-        <li>{{#link-to 'ui.modals'}}<i class="fa fa-circle-o"></i> Modals{{/link-to}}</li>
-        <li>{{#link-to 'ui.stats'}}<i class="fa fa-circle-o"></i> Stat Boxes{{/link-to}}</li>
-      </ul>
-    </li>
-    <li class="treeview">
-      <a href="#">
-        <i class="fa fa-edit"></i> <span>Forms and Filters</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="treeview-menu">
-        <li>{{#link-to 'forms.general'}}<i class="fa fa-circle-o"></i> General Elements{{/link-to}}</li>
-        <li>{{#link-to 'forms.advanced'}}<i class="fa fa-circle-o"></i> Advanced Elements{{/link-to}}</li>
-      </ul>
-    </li>
-    <li class="treeview">
-      <a href="#">
-        <i class="fa fa-table"></i> <span>Tables</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="treeview-menu">
-        <li>{{#link-to 'tables.simple'}}<i class="fa fa-circle-o"></i> Simple tables{{/link-to}}</li>
-        <li>{{#link-to 'tables.data'}}<i class="fa fa-circle-o"></i> Data tables{{/link-to}}</li>
-      </ul>
-    </li>
-    <li class="treeview">
-      <a href="#">
-        <i class="fa fa-folder"></i> <span>Example Pages</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="treeview-menu">
-        <li>{{#link-to 'templates.404'}}<i class="fa fa-circle-o"></i> 404 Error{{/link-to}}</li>
-      </ul>
-    </li>
+    {{#each links as |link|}}
+
+      {{! render titles }}
+      {{#if link.isTitle}}
+        <li class="header">{{link.text}}</li>
+      {{/if}}
+
+      {{! render multi-menus }}
+      {{#if link.isTree}}
+        <li class="treeview">
+          <a href="#">
+            <i class="{{link.icon}}"></i>
+            <span>{{link.text}}</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            {{#each link.children as |child|}}
+              <li>{{#link-to child.linkTo}}<i class="{{child.icon}}"></i> {{child.text}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </li>        
+      {{/if}}
+
+      {{! render single menus }}
+      {{#if link.isMenu}}
+        <li>
+          {{#link-to link.linkTo}}
+            <i class="{{link.icon}}"></i> <span>{{link.text}}</span>
+          {{/link-to}}
+        </li>
+      {{/if}}
+
+    {{/each}}
   </ul>
 </section>
