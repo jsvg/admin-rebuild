@@ -35,7 +35,6 @@ export default Component.extend({
       const routeNames = currentRouteName.split('.');
       const filteredRouteNames = this._filterIndexRoutes(routeNames);
       const crumbs = this._lookupBreadCrumb(routeNames, filteredRouteNames);
-
       return get(this, 'reverse') ? crumbs.reverse() : crumbs;
     }
   }).readOnly(),

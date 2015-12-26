@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
       children: [
         {
           text: 'C3.js Basic',
-          linkTo: 'index',
+          linkTo: 'visualizations.C3',
           icon: 'fa fa-circle-o'
         },
         {

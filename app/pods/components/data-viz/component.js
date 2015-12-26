@@ -65,7 +65,7 @@ export default Component.extend({
   },
 
   // wait for data to load before trying to render the chart
-  debouncer: observer('data.@each.isLoaded', function() {
+  debouncer: observer('data', function() {
     run.debounce(this, this._renderChart, 300);
   }),
 

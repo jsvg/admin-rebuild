@@ -1,8 +1,10 @@
 import Ember from 'ember';
-const { $, Route } = Ember;
+const { $, on, Route } = Ember;
 export default Route.extend({
-  jqSetup: function() {
+  jqSetup: on('activate', function() {
     // adds theme skins to page
     $('body').addClass('theme sidebar-mini');
-  }.on('activate')
+    // fix for IE page transitions
+    $("body").removeClass("hold-transition");
+  })
 });

@@ -1,1 +1,65 @@
-{{outlet}}
+{{! T styles.forms.advanced }}
+<section class="content-header">
+  <h1>
+    Advanced Form Elements
+    <small>Preview</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Forms</a></li>
+    <li class="active">Advanced Elements</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+
+    {{! left col }}
+    <div class="col-md-6">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Date-Range Picker</h3>
+        </div>
+        <div class="box-body">
+          {{date-picker
+            range=true
+            startDate=startDate
+            endDate=endDate}}
+          <div class="col-md-6 text-center">
+            {{if startDate startDate "Start date"}}
+          </div>
+          <div class="col-md-6 text-center">
+            {{if endDate endDate "End date"}}
+          </div>
+        </div>
+      </div>
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Drag-drop</h3>
+        </div>
+        <div class="box-body">
+          To-do
+        </div>
+      </div>
+      
+    </div>
+
+    {{! right col }}
+    <div class="col-md-6">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Value Slider</h3>
+        </div>
+        <div class="box-body">
+          {{x-slider min=0 max=100 step=1 value=saturationPercentage}}
+          <div>Slide value: {{if saturationPercentage saturationPercentage "-"}}</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,4 +1,4 @@
+// T styles.ui.index
 import Ember from 'ember';
-
-export default Ember.Route.extend({
-});
+const { Route } = Ember;
+export default Route.extend({});

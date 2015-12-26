@@ -1,17 +1,9 @@
 export default function() {
   this.namespace = 'api';
-  this.get('/organizations');
-  this.get('/organizations/:id');
-  this.get('/points');
-  this.get('/points/:id');
   this.get('/projects');
   this.get('/projects/:id');
   this.get('/projects', function(db, request) {
     return {projects: db.projects.where(request.queryParams)};
-  });
-  this.get('/filterOptions');
-  this.get('/filterOptions', function(db, request) {
-    return {filterOptions: db.filterOptions.where(request.queryParams)};
   });
 
   // These comments are here to help you get started. Feel free to delete them.

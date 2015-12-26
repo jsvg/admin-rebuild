@@ -26,6 +26,9 @@ Router.map(function() {
       this.route('404');
     });
   });
+  this.route('visualizations', function() {
+    this.route('C3');
+  });
 });
 
 export default Router;
