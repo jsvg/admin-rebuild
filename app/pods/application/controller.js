@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
         },
         {
           text: 'DS.js Complex',
-          linkTo: 'index',
+          linkTo: 'visualizations.d3',
           icon: 'fa fa-circle-o'
         }
       ]

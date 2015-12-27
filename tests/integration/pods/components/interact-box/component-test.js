@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('data-viz-rebuild', 'Integration | Component | data viz rebuild', {
+moduleForComponent('interact-box', 'Integration | Component | interact box', {
   integration: true
 });
 
@@ -10,15 +10,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
 
-  this.render(hbs`{{data-viz-rebuild}}`);
+  this.render(hbs`{{interact-box}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:" + EOL +
   this.render(hbs`
-    {{#data-viz-rebuild}}
+    {{#interact-box}}
       template block text
-    {{/data-viz-rebuild}}
+    {{/interact-box}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

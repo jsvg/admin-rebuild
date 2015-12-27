@@ -18,8 +18,8 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff', {destDir: "fonts"});
   app.import('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2', {destDir: "fonts"});
 
-  // jquery plugins need to be imported
-  app.import('bower_components/jquery-slimscroll/jquery.slimscroll.js');
+  // plugins need to be imported
+  app.import('bower_components/interact/interact.js');
   app.import('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js');
 
   app.import('vendor/custom-theme.css');

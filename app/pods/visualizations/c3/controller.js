@@ -49,7 +49,8 @@ export default Controller.extend({
       x: 'x',
       columns: [_orgs, _costs],
       type: 'area-spline',
-      groups: []
+      //groups: [],
+      //onmouseover: function (d) { console.log(d); }
     };
     return data;
   }),

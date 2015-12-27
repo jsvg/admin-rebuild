@@ -22,7 +22,8 @@
     "jquery-slimscroll": "~1.3.7",
     "bootstrap-datepicker": "~1.5.0",
     "moment-timezone": ">= 0.1.0",
-    "moment": ">= 2.8.0"
+    "moment": ">= 2.8.0",
+    "interact": "~1.2.6"
   },
   "resolutions": {
     "d3": "~3.5.12"

@@ -28,7 +28,10 @@ Router.map(function() {
   });
   this.route('visualizations', function() {
     this.route('C3');
+    this.route('d3');
   });
+
+  this.route('visulizations', function() {});
 });
 
 export default Router;
