@@ -1,8 +1,10 @@
+// base styles
+@import "bootstrap/_bootstrap.scss";
 @import 'bower_components/font-awesome/scss/font-awesome';
+@import "theme/admin-lte";
 @import 'theme';
+
+// component-specifics
 @import 'pod-styles';
 
-.content-wrapper {
-  // room for header
-  padding-top: 50px;
-}
+// app-wide specific

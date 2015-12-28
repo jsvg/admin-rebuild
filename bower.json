@@ -23,7 +23,8 @@
     "bootstrap-datepicker": "~1.5.0",
     "moment-timezone": ">= 0.1.0",
     "moment": ">= 2.8.0",
-    "interact": "~1.2.6"
+    "interact": "~1.2.6",
+    "Ionicons": "ionicons#~2.0.1"
   },
   "resolutions": {
     "d3": "~3.5.12"
