@@ -36,7 +36,7 @@
   border-bottom: $border-bottom-width solid $border-bottom-color;
 
   &:hover {
-    background-color: darken($bg-color, 1%);
+    background-color: darken($bg-color, 5%);
   }
 }
 
