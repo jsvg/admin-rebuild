@@ -18,7 +18,7 @@
       <div class="row">
         <div class="box">
           <div class="box-header">
-            Data Filter
+            <h3 class="box-title">Data Filter</h3>
           </div>
           <div class="box-body">
             {{! activity filter }}
@@ -31,7 +31,6 @@
                 {{/each}}
               </select>
             </div>
-
             {{! IC filter }}
             <div class="form-group">
               <label>Select IC</label>
@@ -42,7 +41,6 @@
                 {{/each}}
               </select>
             </div>
-
           </div>
         </div>
       </div>      
@@ -78,7 +76,7 @@
     <div class="col-md-6">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">C3.JS Visualization</h3>
+          <h3 class="box-title">Filtered Visualization</h3>
         </div>
         <div class="box-body">
           {{data-viz
@@ -86,10 +84,23 @@
             axis=axis
             legend=legend
             padding=padding
-            elementId='chart'
           }}
         </div>
       </div>
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Grouped Visualization</h3>
+        </div>
+        <div class="box-body">
+          {{data-viz
+            data=groupedData
+            axis=axis
+            legend=legend
+            padding=padding
+          }}
+        </div>
+      </div>
+
     </div>
 
   </div>

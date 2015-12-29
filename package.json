@@ -40,6 +40,7 @@
     "ember-cli-sri": "^1.2.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-component-css": "0.1.6",
+    "ember-cpm": "2.1.1",
     "ember-d3": "0.1.0",
     "ember-data": "2.2.0",
     "ember-disable-proxy-controllers": "^1.0.1",

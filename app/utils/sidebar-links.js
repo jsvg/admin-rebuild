@@ -1,8 +1,5 @@
-// application
-import Ember from 'ember';
-
-export default Ember.Controller.extend({
-  sidebarData: [
+export default function sidebarLinks() {
+  const sidebarData = [
     {
       isTitle: true,
       text: 'MAIN NAVIGATION'
@@ -112,5 +109,6 @@ export default Ember.Controller.extend({
         }
       ]
     }
-  ]
-});
+  ];
+  return sidebarData;
+}

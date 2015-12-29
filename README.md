@@ -1,7 +1,13 @@
 # Admin-rebuild
 
-Ember port of Admin LTE from https://github.com/almasaeed2010/AdminLTE with 
-theme customization.
+Ember Admin UI
+
+## TODO
+* Add data-viz options modal component
+* URL-state driven "active" classes on sidebar links
+* Make D3 viz test
+* DnD Ember way
+* DB fixtures for user prefs and projects
 
 ## Prerequisites
 

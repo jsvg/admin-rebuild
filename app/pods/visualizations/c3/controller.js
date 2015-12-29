@@ -1,5 +1,7 @@
 import Ember from 'ember';
 const { Controller, computed } = Ember;
+import groupBy from '../../../utils/macros/group-by';
+import sumGroup from '../../../utils/macros/sum-group';
 
 export default Controller.extend({
   queryParams: ['activity','institute'],
@@ -36,25 +38,42 @@ export default Controller.extend({
     }
   }),
 
-  // C3 parameters
+  // filtered visualization
   modelData: computed.alias('filteredProjects'),
   _costs: computed.mapBy('modelData', 'TOTAL_COST'),
   _orgs: computed.mapBy('modelData', 'ORG_NAME'),
   data: computed('_costs', '_orgs', function() {
-    let _costs = this.get('_costs');
-    let _orgs = this.get('_orgs');
-    _costs.unshift('Total Cost');
-    _orgs.unshift('x');
+    let columns = this.get('_costs');
+    let labels = this.get('_orgs');
+    columns.unshift('Total Cost');
+    labels.unshift('x');
     let data = {
       x: 'x',
-      columns: [_orgs, _costs],
+      columns: [labels, columns],
       type: 'area-spline',
-      //groups: [],
-      //onmouseover: function (d) { console.log(d); }
+      order: 'asc'
     };
     return data;
   }),
 
+  // grouped visualization
+  groups: groupBy('model', 'IC_NAME'),
+  sumGroups: sumGroup('groups', 'TOTAL_COST'),
+  groupedData: computed('sumGroups', function() {
+    let sg = this.get('sumGroups');
+    let labels = sg.getEach('key'),
+        cols = sg.getEach('value');
+    labels.unshift('x');
+    cols.unshift('IC Names');
+    let data = {
+      x: 'x',
+      columns: [labels, cols],
+      type: 'bar'
+    };
+    return data;
+  }),
+
+  // viz options
   axis: {
     x: {
       type: 'category'
