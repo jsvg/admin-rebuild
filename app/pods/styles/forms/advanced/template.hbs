@@ -1,4 +1,8 @@
 {{! T styles.forms.advanced }}
+<style>
+  .drag-cursor {cursor: move !important;}
+</style>
+
 <section class="content-header">
   <h1>
     Advanced Form Elements
@@ -16,49 +20,68 @@
 
     {{! left col }}
     <div class="col-md-6">
+      {{#ui-box box-header='Date-Range Picker'}}
+        {{date-picker
+          range=true
+          startDate=startDate
+          endDate=endDate}}
+        <div class="col-md-6 text-center">
+          {{if startDate startDate "Start date"}}
+        </div>
+        <div class="col-md-6 text-center">
+          {{if endDate endDate "End date"}}
+        </div>
+      {{/ui-box}}
 
-      <div class="box box-primary">
-        <div class="box-header with-border">
-          <h3 class="box-title">Date-Range Picker</h3>
+      {{! dropzone }}
+      {{#ui-box box-header='Dropzone'}}
+        <div class="selected-users">
+          {{#drag-dropzone dropped="addUser" currentlyDragging=currentlyDragging}}
+            <ul class="selected-users-list">
+              {{#each selectedUsers as |user|}}
+                <div class="btn bg-olive" {{action 'removeUser' user}}>{{user.firstName}} {{fa-icon 'times'}}</div>
+              {{else}}
+                <p class="text-center text-light-blue">
+                  {{#if currentlyDragging}}
+                    <b>Drop here</b>
+                  {{else}}
+                    <small>Drag an item here</small>
+                  {{/if}}
+                </p>
+              {{/each}} 
+            </ul>
+          {{/drag-dropzone}}
         </div>
-        <div class="box-body">
-          {{date-picker
-            range=true
-            startDate=startDate
-            endDate=endDate}}
-          <div class="col-md-6 text-center">
-            {{if startDate startDate "Start date"}}
-          </div>
-          <div class="col-md-6 text-center">
-            {{if endDate endDate "End date"}}
-          </div>
-        </div>
-      </div>
-
-      <div class="box box-primary">
-        <div class="box-header with-border">
-          <h3 class="box-title">Drag-drop</h3>
-        </div>
-        <div class="box-body">
-          {{interact-box}}
-        </div>
-      </div>
-      
+      {{/ui-box}}
     </div>
 
     {{! right col }}
     <div class="col-md-6">
+      {{#ui-box box-header='Value Slider'}}
+        {{x-slider min=0 max=100 step=1 value=saturationPercentage}}
+        <div>Slide value: {{if saturationPercentage saturationPercentage "-"}}</div>
+      {{/ui-box}}
 
-      <div class="box box-primary">
-        <div class="box-header with-border">
-          <h3 class="box-title">Value Slider</h3>
+      {{! drop items }}
+      {{#ui-box box-header='Drag Items'}}
+        <div class="available-users">
+          <header>
+            <h4>Items left to add: {{remainingUsersLength}} </h4>
+          </header>
+          {{#each remainingUsers as |user|}}
+            {{#drag-item content=user.id dragging='dragging'}}
+              <div class="drag-cursor btn bg-olive" {{action 'addUser' user.id}}>{{user.firstName}}</div>
+            {{/drag-item}}
+          {{else}}
+            <p>No items left to add</p>
+          {{/each}}
         </div>
-        <div class="box-body">
-          {{x-slider min=0 max=100 step=1 value=saturationPercentage}}
-          <div>Slide value: {{if saturationPercentage saturationPercentage "-"}}</div>
-        </div>
-      </div>
 
+        <div class="controls">
+          <button class="btn" {{action 'addAllUsers'}}>Add all</button>
+          <button class="btn" {{action 'removeAllUsers'}}>Remove all</button>
+        </div>
+      {{/ui-box}}
     </div>
 
   </div>

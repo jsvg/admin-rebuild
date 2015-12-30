@@ -22,7 +22,6 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2', {destDir: "fonts"});
 
   app.import('bower_components/bootstrap/dist/js/bootstrap.js');
-  app.import('bower_components/interact/interact.js');
   app.import('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js');
 
   return app.toTree();

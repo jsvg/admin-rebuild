@@ -1,0 +1,10 @@
+& {
+  display: inline-block;
+  padding: 5px;
+  -moz-user-select: none;
+  -khtml-user-drag: element;
+  cursor: move;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

@@ -2,7 +2,7 @@
 {{! logo }}
 {{#link-to "index" class="logo"}}
   <span class="logo-mini">{{fa-icon 'heart-o'}}</span>
-  <span class="logo-lg">NHLBI <b>SPA</b></span>
+  <span class="logo-lg">{{boldTitleLogo}} <b>{{titleLogo}}</b></span>
 {{/link-to}}
 
 {{! navbar }}
@@ -28,11 +28,11 @@
         </form>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{fa-icon 'user'}}  Alastair {{fa-icon 'caret-down' tagName='span'}}</a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{fa-icon 'user'}}  {{userName}} {{fa-icon 'caret-down' tagName='span'}}</a>
         <ul class="dropdown-menu" role="menu">
           <li><a href="#">Settings</a></li>
           <li class="divider"></li>
-          <li>{{#link-to 'index'}}View SPA{{/link-to}}</li>
+          <li>{{#link-to 'index'}}View Admin{{/link-to}}</li>
           <li>{{#link-to 'styles'}}View Stlyes{{/link-to}}</li>
           <li class="divider"></li>
           <li><a href="#">Logout</a></li>

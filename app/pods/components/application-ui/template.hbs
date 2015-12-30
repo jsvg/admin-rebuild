@@ -1,9 +1,9 @@
 {{! C application-ui }}
-{{application-header toggleAside=(action 'toggleAside')}}
+{{application-header toggleAside=(action 'toggleAside') userName=userName boldTitleLogo=boldTitleLogo titleLogo=titleLogo}}
 {{application-sidebar links=sidebarData}}
 <div class="content-wrapper">
   <section class="content">
     {{liquid-outlet}}
   </section>
 </div>
-{{application-footer version=version}}
+{{application-footer version=footerVersion primary=footerPrimary secondary=footerSecondary}}

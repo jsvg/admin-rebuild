@@ -5,7 +5,7 @@ export default function macrosLenGroup(groups, aggregateOn) {
   const dependentKey = groups + '.@each.' + aggregateOn;
 
   return computed(dependentKey, function() {
-    let aggregation = A();
+    let aggregation = new A();
     const groups = get(this, 'groups');
 
     groups.map( (group) => {

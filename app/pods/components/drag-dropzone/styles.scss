@@ -1,0 +1,13 @@
+
+& {
+  display: block;
+  transition: .2s all ease-in;
+  min-height: 30px;
+  &.currently-dragging {
+    background-color: lighten($light-blue, 50%);
+  }
+  &.activated {
+    border-color: darken($light-blue, 50%);
+    background-color: lighten($olive, 30%);
+  }
+}

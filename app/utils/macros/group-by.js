@@ -4,6 +4,8 @@
  * Pivot ember model based on a provided model property.
  * Returns an ember array with an object containing a unique property
  * key and an items array with the model's associated items
+ *
+ * @module group-by
  */
 import Ember from 'ember';
 const { A, computed, get } = Ember;

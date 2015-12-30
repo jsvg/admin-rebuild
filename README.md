@@ -8,6 +8,8 @@ Ember Admin UI
 * Make D3 viz test
 * DnD Ember way
 * DB fixtures for user prefs and projects
+* Box layout view component (pref resizable)
+  * maybe make entire .content-wrapper a drop-zone for resizing box components
 
 ## Prerequisites
 

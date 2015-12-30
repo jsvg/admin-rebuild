@@ -2,8 +2,7 @@
   "predef": [
     "document",
     "window",
-    "-Promise",
-    "interact"
+    "-Promise"
   ],
   "browser": true,
   "boss": true,
